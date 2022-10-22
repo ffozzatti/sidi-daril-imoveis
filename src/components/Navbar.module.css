@@ -1,0 +1,26 @@
+.navbar {
+    background-color: midnightblue;
+    color: #bbb;
+    height: 100vh;
+    min-width: 10vw;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1em .5em;
+}
+
+.navbar span {
+    color: #fff;
+    font-size: 1.8em;
+}
+
+.navbar ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar li {
+    list-style: none;
+    padding: 1em 0;
+}

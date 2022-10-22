@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  background-color: E6FCFF;
+  font-family: "Montserrat", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input::placeholder,
+textarea::placeholder {
+    font-family: "Montserrat", sans-serif;
+    color: #aaa;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+}
+
+a,
+nav button {
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    transition: .4s;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0.5em 0;
+    font-family: "Montserrat", sans-serif;
+}
+
+a:hover,
+nav button:hover{
+    color: rgb(153, 153, 153);
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin: 2em 0;
+}
+
+label span {
+  margin-bottom: .3em;
+  font-weight: bold;
+  text-align: left;
+}
+
+input, textarea {
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #CCC;
+  padding: .8em 0;
+  background-color: transparent;
+}
+
+.btn {
+  background-color: midnightblue;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  width: 120px;
+  font-weight: bold;
+  border: none;
+  padding: 5px 10px;
+  font-size: 1em;
+}
+
+
+.btn:hover {
+  background-color: rgb(44, 44, 197);
+}
+
+
+button[disable] {
+  background-color: #AAA;
+}
+
+.error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  padding: 5px;
+  border-radius: 5px;
+  max-width: 100%;
+  margin: 1em auto;
+}
