@@ -1,0 +1,43 @@
+.modal {
+    width: 90%;
+    height: 90%;
+    background-color: white;
+    padding: 10px;
+    overflow: auto;
+  }
+
+  .overlay {
+    background-color: #ececec;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.line {
+  display: flex;
+  flex: 1;
+  justify-content: space-between;
+}
+
+.form_clientes label {
+  width: 90%;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.form_clientes .radio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  padding: 0 10px;
+}
+
+.form_clientes .radio span {
+  padding: 0 10px;
+}

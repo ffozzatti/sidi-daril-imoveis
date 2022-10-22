@@ -15,6 +15,7 @@ import Clientes from './pages/Clientes/Clientes';
 import Corretores from './pages/Corretores/Corretores';
 import Navbar from './components/Navbar';
 import Cliente from './pages/Cliente/Cliente';
+import Corretor from './pages/Corretor/Corretor';
 
 function App() {
 
@@ -59,6 +60,10 @@ function App() {
             <Route 
               path="/cliente/:id" 
               element={ user ? <Cliente /> : <Navigate to="/login"/>} 
+            />
+            <Route 
+              path="/corretor/:id" 
+              element={ user ? <Corretor /> : <Navigate to="/login"/>} 
             />
           </Routes>      
         </BrowserRouter>
