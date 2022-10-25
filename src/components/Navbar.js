@@ -1,47 +1,51 @@
-import styles from './Navbar.module.css'
+import styles from "./Navbar.module.css";
 
-import { NavLink } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 
-import { useAuthentication } from '../hooks/useAuthentication'
-import { useAuthValue } from '../context/AuthContext'
+import { useAuthentication } from "../hooks/useAuthentication";
+import { useAuthValue } from "../context/AuthContext";
+import Logo from "./Logo";
 
 const Navbar = () => {
+  const { user } = useAuthValue();
+  const { logout } = useAuthentication();
 
-  const {user} = useAuthValue()
-  const {logout} = useAuthentication()
+  const logoutConfirm = () => {
+    const confirmAction = window.confirm("Deseja realmente sair?");
+
+    if (confirmAction == true) {
+      logout();
+    }
+  };
 
   return (
     <nav className={styles.navbar}>
-        <span>Olá, bem vindo!</span>
-        <ul>
-            <li>
-                <NavLink to='/'>
-                    Dashboard
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to='/clientes'>
-                    Clientes
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to='/corretores'>
-                    Corretores
-                </NavLink>
-            </li>
-            <li>
-                <NavLink to='/imoveis'>
-                    Imoveis
-                </NavLink>
-            </li>
-        </ul>
-        {user && (
-            <li>
-                <button onClick={ logout }>Sair</button>
-            </li>
-        )}
+      <div className={styles.logo}>
+        <Logo />
+      </div>
+      <ul>
+        <NavLink to="/">
+          <li>Dashboard</li>
+        </NavLink>
+        <NavLink to="/clientes">
+          <li>Clientes</li>
+        </NavLink>
+        <NavLink to="/corretores">
+          <li>Corretores</li>
+        </NavLink>
+        <NavLink to="/fornecedores">
+          <li>Incorporadora</li>
+        </NavLink>
+      </ul>
+      {user && (
+        <div className={styles.logout}>
+          <button onClick={logoutConfirm} className="btn">
+            Sair
+          </button>
+        </div>
+      )}
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

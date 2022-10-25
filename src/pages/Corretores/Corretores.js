@@ -6,7 +6,6 @@ import { useInsertDocument } from "../../hooks/useInsertDocument";
 import styles from "./Corretores.module.css";
 
 import Modal from "react-modal";
-import DashboardCorretores from "../../components/DashboardCorretores";
 
 Modal.setAppElement("#root");
 
@@ -100,20 +99,16 @@ const Corretores = () => {
 
   
   return (
-    <div>
-      <h1>Corretores</h1>
+    <div className='container'>
       <button className="btn" onClick={openModal}>
         Cadastrar
       </button>
-
-      <DashboardCorretores />
 
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel={"Example Modal"}
-        overlayClassName={styles.overlay}
-        className={styles.modal}
+        shouldCloseOnOverlayClick={false}
       >
         <form onSubmit={handleSubmit} className={styles.form_clientes}>
 
@@ -147,6 +142,30 @@ const Corretores = () => {
                 onChange={(e) => setLastName(e.target.value)}
                 required
               />
+            </label>
+          </div>
+          <div className={styles.line}>
+          <label>
+              <span>Data de Nascimento:</span>
+              <input
+                type="text"
+                name="birthDate"
+                value={birthDate}
+                onChange={(e) => setBirthDate(e.target.value)}
+                required
+              />
+            </label>
+            <label>
+            <span>Sexo: </span>
+              <select
+                name="genre"
+                onChange={(e) => setGenre(e.target.value)}
+                value={genre}
+              >
+                <option>Selecione seu sexo...</option>
+                <option>Masculino</option>
+                <option>Feminino</option>                
+              </select>
             </label>
           </div>
 

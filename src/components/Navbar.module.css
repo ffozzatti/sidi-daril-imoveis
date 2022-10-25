@@ -1,13 +1,12 @@
 .navbar {
-    background-color: midnightblue;
-    color: #bbb;
+    background-color: var(--blue-700);
     height: 100vh;
-    min-width: 10vw;
-    position: fixed;
+    width: 324px;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 1em .5em;
+
 }
 
 .navbar span {
@@ -23,4 +22,21 @@
 .navbar li {
     list-style: none;
     padding: 1em 0;
+    font-size: 18px;
+    cursor: pointer;
+    transition: ease-in-out .2s;
+}
+
+.navbar li:hover {
+    background-color: var(--blue-900);
+    width: 108%;
+}
+
+.logo {
+    width: 200px;
+    margin: 0 auto;
+}
+
+.logout {
+    margin: 10px auto;
 }

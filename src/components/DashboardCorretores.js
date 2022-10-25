@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import { useAuthValue } from "../context/AuthContext";
 import { useFetchDocuments } from "../hooks/useFetchDocuments";
+import Corretores from '../pages/Corretores/Corretores';
 
 
 const DashboardCorretores = () => {
@@ -25,14 +26,17 @@ const DashboardCorretores = () => {
   }
 
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className='container'>
+      <h1 className='page_title'>Corretores</h1>
       {corretores && corretores.length === 0 ? (
         <div>
           <p>Não foram encontrados corretores</p>         
         </div>
       ) : (
-        <div className={styles.dashboard}>
+        <div className='dashboard'>
+          <div>
+            <Corretores />
+          </div>
           {corretores &&
             corretores.map((corretor) => (
               <div key={corretor.id} className={styles.card}>

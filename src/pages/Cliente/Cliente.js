@@ -8,7 +8,7 @@ const Cliente = () => {
   const { document: cliente, loading } = useFetchDocument("clientes", id);
 
   return (
-    <div>
+    <div className='container'>
       {loading && <p> Carregando post...</p>}
 
       {cliente && (

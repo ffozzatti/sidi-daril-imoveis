@@ -1,9 +1,10 @@
-import styles from './DashboardClient.module.css'
+import styles from "./DashboardClient.module.css";
 
 import { Link } from "react-router-dom";
 
 import { useAuthValue } from "../context/AuthContext";
 import { useFetchDocuments } from "../hooks/useFetchDocuments";
+import Clientes from "../pages/Clientes/Clientes";
 
 const DashboardClient = () => {
   const { user } = useAuthValue();
@@ -23,20 +24,28 @@ const DashboardClient = () => {
   }
 
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className="container">
+      <h1 className='page_title'>Clientes</h1>
+         
       {clientes && clientes.length === 0 ? (
         <div>
-          <p>Não foram encontrados clientes</p>         
+          <p>Não foram encontrados clientes</p>
         </div>
       ) : (
-        <div className={styles.dashboard}>
+        <div className="dashboard">
+          <div>
+            <Clientes />
+          </div>
           {clientes &&
             clientes.map((cliente) => (
               <div key={cliente.id} className={styles.card}>
-                <p>{cliente.name}</p>
+                <p>Nome: {cliente.name}</p>
+                <p>Fgts: {cliente.fgtsValue}</p>
                 <div className={styles.actions}>
-                  <Link to={`/cliente/${cliente.id}`} className="btn btn-outline">
+                  <Link
+                    to={`/cliente/${cliente.id}`}
+                    className="btn btn-outline"
+                  >
                     Ver
                   </Link>
                   <Link

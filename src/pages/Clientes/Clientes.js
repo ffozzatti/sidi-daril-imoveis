@@ -3,7 +3,6 @@ import { Navigate, useNavigate } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
 import { useInsertDocument } from "../../hooks/useInsertDocument";
 
-import DashboardClient from '../../components/DashboardClient'
 
 import styles from "./Clientes.module.css";
 
@@ -78,22 +77,16 @@ const Clientes = () => {
   };
 
   return (
-    <div>
-      <h1>Clientes</h1>
+    <div className="container">      
       <button className="btn" onClick={openModal}>
         Cadastrar
-      </button>
-      
-      <DashboardClient />
-
+      </button>      
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel={"Example Modal"}
-        overlayClassName={styles.overlay}
-        className={styles.modal}
-      >
-        <h2>Cadastrar clientes</h2>
+        shouldCloseOnOverlayClick={false}      
+      >        
         <p>Preencha o plano de necessidades.</p>
         <form className={styles.form_clientes} onSubmit={handleSubmit}>
           <header>

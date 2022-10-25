@@ -8,7 +8,7 @@ const Corretor = () => {
   const { document: corretor, loading } = useFetchDocument("corretores", id);
 
   return (
-    <div>
+    <div className='container'>
       {loading && <p> Carregando post...</p>}
 
       {corretor && (
