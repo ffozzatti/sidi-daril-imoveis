@@ -11,15 +11,20 @@ import { useAuthentication } from "./hooks/useAuthentication";
 import { AuthProvider } from "./context/AuthContext";
 import Login from "./pages/Login/Login";
 import Home from "./pages/Home/Home";
-import Clientes from "./pages/Clientes/Clientes";
-import Corretores from "./pages/Corretores/Corretores";
+
 import Navbar from "./components/Navbar";
 import Cliente from "./pages/Cliente/Cliente";
 import Corretor from "./pages/Corretor/Corretor";
-import BemVindo from "./pages/BemVindo/BemVindo";
+
 import DashboardClient from "./components/DashboardClient";
 import DashboardCorretores from "./components/DashboardCorretores";
-import Fornecedores from "./pages/Fornecedores/Fornecedores";
+
+import DashboardIncorporadora from "./components/DashboardIncorporadora";
+import Incorporadora from "./pages/Incorporadora/Incorporadora";
+
+import EditClientes from './pages/EditClientes/EditClientes'
+import EditCorretores from "./pages/EditCorretores/EditCorretores";
+import EditIncorporadoras from "./pages/EditIncorporadoras/EditIncorporadoras";
 
 function App() {
   const [user, setUser] = useState(undefined);
@@ -39,7 +44,7 @@ function App() {
 
   return (
     <div className="App">
-      <AuthProvider value={{ user }}>        
+      <AuthProvider value={{ user }}>
         <BrowserRouter>
           {user && <Navbar />}
           <Routes>
@@ -57,7 +62,9 @@ function App() {
             />
             <Route
               path="/corretores"
-              element={user ? <DashboardCorretores /> : <Navigate to="/login" />}
+              element={
+                user ? <DashboardCorretores /> : <Navigate to="/login" />
+              }
             />
             <Route
               path="/cliente/:id"
@@ -68,8 +75,26 @@ function App() {
               element={user ? <Corretor /> : <Navigate to="/login" />}
             />
             <Route
-              path="/fornecedores"
-              element={user ? <Fornecedores /> : <Navigate to="/login" />}
+              path="/incorporadora/:id"
+              element={user ? <Incorporadora /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/incorporadoras"
+              element={
+                user ? <DashboardIncorporadora /> : <Navigate to="/login" />
+              }
+            />
+            <Route
+              path="/clientes/edit/:id"
+              element={user ? <EditClientes /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/corretores/edit/:id"
+              element={user ? <EditCorretores /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/incorporadoras/edit/:id"
+              element={user ? <EditIncorporadoras /> : <Navigate to="/login" />}
             />
           </Routes>
         </BrowserRouter>

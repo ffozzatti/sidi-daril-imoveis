@@ -1,3 +1,8 @@
 .principal_dashboard {
     margin-top: 200px;
 }
+
+.subtitle {
+    margin-bottom: 20px;
+    color: var(--gray-400);
+}

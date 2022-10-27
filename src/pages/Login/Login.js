@@ -6,6 +6,7 @@ import { BsFillShieldLockFill } from "react-icons/bs";
 import { useAuthentication } from "../../hooks/useAuthentication";
 
 import styles from "./Login.module.css";
+import Background from "../../components/Background";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -43,10 +44,10 @@ const Login = () => {
       <h1>Bem vindo ao SIDI!</h1>
       <p>Digite suas credencias de acesso.</p>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='form_login'>
         <label>
           <span>
-            <FaUserCircle />{" "}
+            <FaUserCircle className="icon-login"/>{" "}
           </span>
           <input
             type="email"
@@ -61,7 +62,7 @@ const Login = () => {
         <label>
           <span>
             {" "}
-            <BsFillShieldLockFill />{" "}
+            <BsFillShieldLockFill className="icon-login"/>{" "}
           </span>
           <input
             type="password"
@@ -82,6 +83,7 @@ const Login = () => {
 
         {error && <p className="error">{error}</p>}
       </form>
+      <Background className='bg'/>
     </div>
   );
 };

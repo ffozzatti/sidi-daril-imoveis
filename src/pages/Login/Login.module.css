@@ -6,21 +6,20 @@
 
   position: relative;
 
-  height: 100vh;
+height: 100vh;
   width: 100%;
 
-  background: rgb(75, 169, 181);
-  background: linear-gradient(
-    180deg,
-    rgba(75, 169, 181, 1) 0%,
-    rgba(255, 255, 255, 1) 100%
-  );
+  background: rgb(111,125,128);
+  background: linear-gradient(180deg, rgba(111,125,128,1) 0%, rgba(255,255,255,1) 100%);
 }
+
+
 
 .login h1 {
     font-size: 86px;
     color: #fff;
     font-weight: 400;
+    margin-top: 70px;
 }
 
 .login p {
@@ -33,9 +32,10 @@
     width: 200px;
     height: 100%;
 
-    top: 0;
+    top: 20px;
     left: 20px;
     position: absolute;
+    color: #fff;
 }
 
 .login input:focus {

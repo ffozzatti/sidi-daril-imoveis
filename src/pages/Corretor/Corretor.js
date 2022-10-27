@@ -8,19 +8,27 @@ const Corretor = () => {
   const { document: corretor, loading } = useFetchDocument("corretores", id);
 
   return (
-    <div className='container'>
-      {loading && <p> Carregando post...</p>}
+		<div className="container">
+			{loading && <p> Carregando post...</p>}
 
-      {corretor && (
-        <>
-        <p>{corretor.cpf}</p>
-          <p>{corretor.name}</p>
-          <p>{corretor.lastName}</p>          
-          
-        </>
-      )}
-    </div>
-  );
+			{corretor && (
+				<>
+					<p>
+						<span>CPF: </span>
+						{corretor.cpf}
+					</p>
+					<p>
+						<span>NOME: </span>
+						{corretor.name}
+					</p>
+					<p>
+						<span>SOBRENOME: </span>
+						{corretor.lastName}
+					</p>
+				</>
+			)}
+		</div>
+	)
 
 };
 
